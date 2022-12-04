@@ -1,8 +1,10 @@
-﻿namespace ObjectPrinting
+﻿using ObjectPrinting.Common;
+
+namespace ObjectPrinting
 {
    namespace ObjectPrinting
    {
-      public class ObjectPrinter
+      public static class ObjectPrinter
       {
          public static IPrintingConfig<T> For<T>()
          {

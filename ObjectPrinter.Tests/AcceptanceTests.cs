@@ -1,5 +1,7 @@
 ﻿using FluentAssertions.Execution;
 using NUnit.Framework;
+using ObjectPrinting.Common;
+using ObjectPrinting.ObjectPrinting;
 using ObjectPrinting.Tests.Classes;
 using System;
 using System.Globalization;
