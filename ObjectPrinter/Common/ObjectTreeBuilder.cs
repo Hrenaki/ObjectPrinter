@@ -54,6 +54,9 @@ namespace ObjectPrinting.Common
          if (node.Object.Value is null)
             return Enumerable.Empty<ObjectTreeNode>();
 
+         if (typeof(IDictionary).IsAssignableFrom(nodeType))
+            return GetDictionaryNodes(node, configRoot);
+
          if (typeof(ICollection).IsAssignableFrom(nodeType))
             return GetCollectionNodes(node);
          return GetFieldPropertyNodes(node, configRoot);
@@ -74,6 +77,14 @@ namespace ObjectPrinting.Common
                Parent = node
             };
          }
+      }
+
+      private IEnumerable<ObjectTreeNode> GetDictionaryNodes(ObjectTreeNode node, PrintingConfigRoot configRoot)
+      {
+         var itemTypes = node.Object.Type.GetGenericArguments();
+         if (itemTypes.All(type => configRoot.ExcludedTypes.Contains(type)))
+            return Enumerable.Empty<ObjectTreeNode>();
+         return GetCollectionNodes(node);
       }
 
       private IEnumerable<ObjectTreeNode> GetFieldPropertyNodes(ObjectTreeNode node, PrintingConfigRoot configRoot)
@@ -105,7 +116,7 @@ namespace ObjectPrinting.Common
 
       private static bool IsMemberExcluded(FieldPropertyObject obj, PrintingConfigRoot configRoot)
       {
-         return configRoot.ExcludedProperties.Contains(obj.Info) &&
+         return configRoot.ExcludedProperties.Contains(obj.Info) ||
                 configRoot.ExcludedTypes.Contains(obj.Type);
       }
 
