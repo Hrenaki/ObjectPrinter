@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectPrinter", "ObjectPrinter\ObjectPrinter.csproj", "{EDEF8400-3693-41B3-BFC1-9237DE56EC21}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EDEF8400-3693-41B3-BFC1-9237DE56EC21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDEF8400-3693-41B3-BFC1-9237DE56EC21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDEF8400-3693-41B3-BFC1-9237DE56EC21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDEF8400-3693-41B3-BFC1-9237DE56EC21}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5FA15F46-624D-42E3-A61B-8E3BF48E4805}
+	EndGlobalSection
+EndGlobal
